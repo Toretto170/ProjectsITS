@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400");
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+::-moz-selection {
+  color: #fff;
+  background: #9FBE5A;
+}
+::selection {
+  color: #fff;
+  background: #9FBE5A;
+}
+
+/* Cambio lo sfondo della pagina */
+body {
+  width: 100vw;
+  height: 100%;
+  padding-bottom: 50px;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #16a085, #f4d03f);
+  background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: fit-content;
+}
+
+fieldset {
+  border: none;
+}
+
+textarea.form-control {
+  height: 300px;
+}
+
+
+/* Cambio il colore del titolo e del testo a verde scuro */
+h1 {
+    margin-bottom: 75px;
+    padding: 0 20vw;
+    font: 400 56px 'Roboto Slab', serif;
+    font-size: 56px;
+    text-align: center;
+    color: #fff;
+}
+
+.two h1 {
+  text-transform: capitalize;
+}
+.two h1:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 2px;
+  content: "";
+  background-color: #c50000;
+}
+
+h2, p {
+  margin-bottom: 10px;
+  padding: 0 5vw;
+  font: 400 56px 'Roboto Slab', serif;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+}
+
+.immetti-file p {
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 3em;
+  padding-left: 0.25em;
+  color: rgb(211, 240, 211);
+  padding-bottom: 10px;
+}
+
+/* Cambio il colore del bordo e del bottone a verde */
+.form-group, #contenitore-risposta {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-left: 30px solid white;
+  -o-border-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI0MS44NnB4IiBoZWlnaHQ9IjUyLjMyNnB4IiB2aWV3Qm94PSIwIDAgNDEuODYgNTIuMzI2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA0MS44NiA1Mi4zMjYiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDB2MjUuMTYzaDcuMDk3YzAuNTAxLTQuOTg5LDQuNzEyLTguODg0LDkuODMzLTguODg0YzUuNDU4LDAsOS44ODQsNC40MjUsOS44ODQsOS44ODRzLTQuNDI1LDkuODg0LTkuODg0LDkuODg0Yy01LjEyMSwwLTkuMzMyLTMuODk1LTkuODMzLTguODg0SDB2MjUuMTYzaDQxLjg2VjBIMHoiLz48L3N2Zz4=) 5% 100% repeat;
+     border-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI0MS44NnB4IiBoZWlnaHQ9IjUyLjMyNnB4IiB2aWV3Qm94PSIwIDAgNDEuODYgNTIuMzI2IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA0MS44NiA1Mi4zMjYiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDB2MjUuMTYzaDcuMDk3YzAuNTAxLTQuOTg5LDQuNzEyLTguODg0LDkuODMzLTguODg0YzUuNDU4LDAsOS44ODQsNC40MjUsOS44ODQsOS44ODRzLTQuNDI1LDkuODg0LTkuODg0LDkuODg0Yy01LjEyMSwwLTkuMzMyLTMuODk1LTkuODMzLTguODg0SDB2MjUuMTYzaDQxLjg2VjBIMHoiLz48L3N2Zz4=) 5% 100% repeat;
+  border-image-width: 0px 0px 0px 30px;
+  transform: translateY(100%);
+  -webkit-animation: init 1s ease-in-out forwards;
+          animation: init 1s ease-in-out forwards;
+}
+
+/* Cambio la shape dell'input */
+.form-group textarea, #contenitore-risposta {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 20px 40px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  font: 15px "Shadows Into Light", cursive;
+  background: #fff linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 0) 0 20px/100% 40px;
+}
+
+/* Cambio la shape del form dopo */
+.form-group textarea:after {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  content: "";
+  height: 100%;
+  width: 1px;
+  border-left: double #E08183;
+}
+
+input, button {
+  margin-bottom: 15px;
+  margin-left: 45%;
+  object-position: center;
+  font-family: "Shadows Into Light", cursive;
+  color: #ffffff;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+
+.form-group button {
+  margin-top: 40px;
+  float: right;
+  border: none;
+  font-family: "Shadows Into Light", cursive;
+  color: #E08183;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.form-group button:hover {
+  transform: translateX(10px);
+}
+
+.form-group p {
+  margin: 0 0 40px 0;
+  line-height: 40px;
+  color: #333;
+}
+
+.form-group label {
+  position: relative;
+  line-height: 40px;
+}
+
+
+svg {
+  display: none;
+}
+
+/* Cambio il colore della scritta testo a bianco */
+label {
+  margin: 0 0 40px 0;
+  line-height: 40px;
+  color: #333;
+}
+
+/* Cambio l'intestazione degli li che si generano dall'analisi*/
+/* li {
+  padding: 5px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(76, 174, 76);
+} */
+
+label {
+  margin: 0 0 40px 0;
+  line-height: 40px;
+  color: #333;
+}
+
+/* Cambio l'intestazione degli li che si generano dall'analisi*/
+.paper .form-group{
+	font-family: "Patrick Hand", cursive;
+	position: relative;
+	line-height: 25px;
+	box-sizing: border-box;
+	width: 1000px;
+	background-color: white;
+	margin: 0 auto;
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+	transition: transform 0.3s, margin 0.3s;
+}
+
+.paper .form-group:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: rgba(255, 0, 0, 0.3);
+  margin-left: 10px;
+  z-index: 2;
+}
+
+.lines .form-group {
+  top: 50px;
+  position: relative;
+  box-sizing: content-box;
+  height: calc(550px - 50px);
+  padding-right: 8px;
+  padding-left: 56px;
+  background-image: repeating-linear-gradient(
+    white 0px,
+    white 23.5px,
+    steelblue 25px
+  );
+}
+
+ li {
+	margin: 0;
+	font-size: 18px;
+  margin-left: 10px;
+}
+
+
+/*cambio lo stile del testo in obliquo*/
+p {
+  font-style: italic;
+}
+
+
+#reset-page {
+  padding: 5px;
+  font-weight: bold;
+}
+
+#contenitore-risposta {
+  position: absolute;
+  top: inherit;
+  margin-left: 20%;
+  margin-top: 20px;
+  height: inherit;
+}
+
+
+#testo {
+  font-weight: lighter ;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*cambio lo stile del pulsante per l'analisi del testo*/
+#analisi_testo, input::file-selector-button {
+  color: white;
+  position: relative;
+  font-size: 21px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 0px;
+  background-color: rgb(47, 141, 47);
+  padding: 5px;
+}
+
+/*Per centrare la scritta ERRORE nel popup*/
+.modal-title {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}
+
+/*cambio lo stile dei pulsanti quando il cursore ci passa sopra*/
+#analisi_testo:hover, input::file-selector-button:hover {
+  background-color: darkgreen;
+  cursor: pointer;
+}
+
+@-webkit-keyframes init {
+  75% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes init {
+  75% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes do-blur {
+  0% {
+    filter: url(#blur4);
+  }
+  25% {
+    filter: url(#blur3);
+  }
+  50% {
+    filter: url(#blur2);
+  }
+  75% {
+    filter: url(#blur1);
+  }
+  100% {
+    filter: url(#blur0);
+  }
+}
+@keyframes do-blur {
+  0% {
+    filter: url(#blur4);
+  }
+  25% {
+    filter: url(#blur3);
+  }
+  50% {
+    filter: url(#blur2);
+  }
+  75% {
+    filter: url(#blur1);
+  }
+  100% {
+    filter: url(#blur0);
+  }
+}

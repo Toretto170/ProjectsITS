@@ -1,0 +1,102 @@
+Progettazione DB Learning By Project:
+
+Dati i seguenti scopi:
+- contare il numero di caratteri in un testo
+- contare il numero di frasi in un testo
+- contare il numero di parole in un testo
+- la parola più lunga
+....
+
+
+Il Database è formato in questa maniera:
+
+DB: learningbyproject
+
+Tabella-Frase:
+	id
+	testo_frase
+	testo_fk
+
+Tabella-Parola:
+	id
+	testo_parola
+	frase_fk_id
+
+----------------------------------------------------------------------
+
+CREATE DATABASE learningbyproject;
+
+USE learningbyproject;
+
+CREATE TABLE frase (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    testo_frase MEDIUMTEXT
+);
+
+CREATE TABLE parola (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    testo_parola TINYTEXT,
+    frase_fk_id INT,
+    FOREIGN KEY (frase_fk_id) REFERENCES frase(id)
+);
+
+-------------------------------------------------------------------------
+
+Funzioni SQL per ottenere analisi:
+    
+    //aggiunto
+    *Ottenere il numero medio di caratteri per frase:
+        SELECT AVG(conteggio_caratteri) AS avg_caratteri_frase FROM ( SELECT LENGTH(testo_frase) AS conteggio_caratteri FROM frase ) AS conteggio_tabella;
+    
+    //aggiunto
+    *Ottenere il numero medio di caratteri per parola:
+        SELECT AVG(conteggio_caratteri) AS avg_caratteri_parola FROM ( SELECT LENGTH(testo_parola) AS conteggio_caratteri FROM parola ) AS conteggio_tabella;
+
+    //aggiunto
+    *Ottenere il numero medio di parole per frase:
+        SELECT AVG(numero_parole) AS media_parole_per_frase FROM (SELECT COUNT(*) AS numero_parole FROM parola GROUP BY frase_fk_id) AS conteggio_parole;
+
+    //aagiunto
+    *Ottenere il numero di caratteri della frase più lunga
+        SELECT MAX(conteggio_caratteri) AS caratteri_frase_piu_lunga FROM (SELECT LENGTH(testo_frase) AS conteggio_caratteri FROM frase) AS conteggio_tabella;
+
+    //aggiunto
+    *Ottenere il numero di caratteri della parola più lunga
+        SELECT MAX(conteggio_caratteri) AS caratteri_parola_piu_lunga FROM (SELECT LENGTH(testo_parola) AS conteggio_caratteri FROM parola) AS conteggio_tabella;
+
+    //aggiunto
+    *Ottenere il numero di caratteri della parola più breve
+        SELECT MIN(conteggio_caratteri) AS caratteri_parola_piu_corta FROM (SELECT LENGTH(testo_parola) AS conteggio_caratteri FROM parola) AS conteggio_tabella;
+
+    //aggiunto
+    *Ottenere il numero di caratteri della frase più breve
+        SELECT MIN(conteggio_caratteri) AS caratteri_frase_piu_corta FROM (SELECT LENGTH(testo_frase) AS conteggio_caratteri FROM frase) AS conteggio_tabella;
+
+    //aggiunto
+    *Ottenere il contenuto della frase più lunga
+        SELECT testo_frase FROM frase WHERE LENGTH(testo_frase) = ( SELECT MAX(LENGTH(testo_frase)) FROM frase ); 
+
+    //aggiunto
+    *Ottenere il contenuto della frase più breve
+        SELECT testo_frase FROM frase WHERE LENGTH(testo_frase) = ( SELECT MIN(LENGTH(testo_frase)) FROM frase );
+
+    //aggiunto
+    *Ottenere il contenuto della parola più lunga
+        SELECT testo_parola FROM parola WHERE LENGTH(testo_parola) = (SELECT MAX(LENGTH(testo_parola)) FROM parola );
+
+    //aggiunto
+    *Ottenere il contenuto della parola più breve
+        SELECT testo_parola FROM parola WHERE LENGTH(testo_parola) = (SELECT MIN(LENGTH(testo_parola)) FROM parola );
+
+    //aggiutno
+    *Ottenere il numero di caratteri in tutto il testo:
+        SELECT SUM(conteggio_caratteri) AS sum_testo FROM ( SELECT LENGTH(testo_frase) AS conteggio_caratteri FROM frase ) AS conteggio_tabella;
+    
+    //aggiunto
+    *Ottenere il numero di frasi nel testo:
+        SELECT COUNT(*) AS numero_frasi FROM frase;
+
+    //aggiunto
+    *Ottenere il numero di parole nel testo:
+        SELECT COUNT(*) AS numero_parole FROM parola;
+
