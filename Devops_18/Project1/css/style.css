@@ -1,0 +1,163 @@
+/* Green Theme */
+:root {
+    --primary-color: #4CAF50; /* Green */
+    --secondary-color: #F1F8E9; /* Light Green */
+    --tertiary-color: #212121; /* Dark Grey */
+    --quaternary-color: #FFFFFF; /* White */
+    --quinary-color: #FFEB3B; /* Yellow */
+  }
+
+  
+/* Navbar */
+nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li a {
+    color: var(--quaternary-color);
+    text-decoration: none;
+    padding: 15px;
+  }
+  
+  nav ul li a:hover {
+    background-color: var(--secondary-color);
+  }
+  
+
+    /* Logo */
+.logo img {
+    width: 50px; /* adjust the width as you like */
+    height: auto;
+  }
+  
+  /* Cart */
+  .cart {
+    margin-right: 20px;
+  }
+  
+  .cart a {
+    color: var(--quaternary-color);
+    text-decoration: none;
+  }
+  
+  .cart a:hover {
+    color: var(--quinary-color);
+  }
+  
+  /* Button */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--quaternary-color);
+    text-decoration: none;
+  }
+  
+  .button:hover {
+    background-color: var(--secondary-color);
+  }
+  
+  /* Products */
+  .products {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 20px;
+  }
+  
+  .product {
+    border-radius: 5px;
+  }
+  
+  .product img {
+    width: 100%;
+  }
+  
+  .product h3,
+  .product p {
+    margin-left: 10px;
+  }
+  
+  .product p:last-child {
+      font-weight:bold;
+  }
+
+  /* Immagine */
+img {
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s; /* add a smooth transition */
+  }
+  
+  /* Immagine al passaggio del mouse */
+  img:hover {
+    transform: scale(1.1); /* make it bigger */
+  }
+
+  /* Footer */
+footer {
+    background-color: #388E3C; /* Dark green */
+    color: white;
+    padding: 20px;
+  }
+  
+  footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  footer .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  footer .col {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  footer h3 {
+    margin-top: 0;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer ul li a:hover {
+    color: #F1F8E9; /* Light green */
+  }
+  
+  footer .social {
+    display: flex;
+  }
+  
+  footer .social a {
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  footer .social a:hover {
+    color: #F1F8E9; /* Light green */
+  }
+  
+  footer .copy {
+    text-align: center;
+  }
+  
+  
